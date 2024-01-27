@@ -1,0 +1,32 @@
+<div class="flex flex-row ml-5">
+  <section class="flex-auto w-2/5">
+
+@if(dumkyList | async; as list) {
+  @for( item of list; track item.id) {
+    <div>{{item.id}}.
+      <a class="cursor-pointer" (click)="showDumka($event, item)">{{item.d_title}}</a>
+      <small class="text-xs text-gray-400">
+        / {{item.d_ts | date}} /
+      </small>
+    </div>
+  } @empty {
+    <small>Думок нема.</small>
+  }
+}
+  </section>
+
+  <section class="flex-auto w-3/5 p-1 pl-5">
+    @if(oneDumka | async; as one) {
+      <h3 class="font-bold text-2xl">{{one.d_title}}</h3>
+      <p class="m p-3">{{one.d_short}}</p>
+      <article class="border rounded-xl border-gray-200 min-h-80 p-3" [innerHTML]="one.d_dumka"></article>
+    } @else {
+     <small class="text-gray-400">Думка ще не обрана.</small>
+    }
+  </section>
+
+</div>
+
+
+
+

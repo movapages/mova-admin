@@ -1,0 +1,18 @@
+<div class="border-4 min-h-80 rounded">
+  <form [formGroup]="addDumkaForm">
+    <div class="flex flex-col m min-w-full">
+      <input placeholder="Заголовок"
+             class="border m-1 text-2xl" type="text" formControlName="d_title" name="title" />
+      <input placeholder="Коротко"
+             class="border m-1" type="text" formControlName="d_short" name="short" />
+    </div>
+  <ckeditor [editor]="Editor" formControlName="d_dumka" name="dumka"></ckeditor>
+  </form>
+</div>
+<hr />
+<div>
+  <h4 class="pt-5 text-gray-600 border-b">Form Content Preview</h4>
+  <div class="text-2xl">{{formDataPreview?.d_title}}</div>
+  <div class="text-xs">{{formDataPreview?.d_short}}</div>
+  <article class="text-xl" [innerHTML]="formDataPreview?.d_dumka"></article>
+</div>
