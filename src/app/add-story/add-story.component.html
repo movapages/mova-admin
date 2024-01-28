@@ -1,8 +1,14 @@
-<div class="border-4 min-h-80 rounded">
+<div class="border-4 min-h-[480px] rounded">
   <form [formGroup]="addDumkaForm">
     <div class="flex flex-col m min-w-full">
-      <input placeholder="Заголовок"
-             class="border m-1 text-2xl" type="text" formControlName="d_title" name="title" />
+      <div class="flex flex-auto flex-row justify-between">
+        <input placeholder="Заголовок"
+             class="border m-1 text-2xl flex-auto w-4/5" type="text" formControlName="d_title" name="title" />
+        <div class="flex justify-evenly flex-auto w-1/5 pt-1">
+          <button class="border rounded-xl min-w-16 text-amber-600" (click)="formReset()">Reset</button>
+          <button class="border rounded-xl min-w-16 text-green-500" (click)="formSave()">Save</button>
+        </div>
+      </div>
       <input placeholder="Коротко"
              class="border m-1" type="text" formControlName="d_short" name="short" />
     </div>

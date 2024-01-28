@@ -1,7 +1,7 @@
 // initial mockup data
 export interface dumkaListInterface {
-  id?: number;
-  d_ts?: string;
+  id: number;
+  d_ts: string;
   d_title: string;
   d_short: string;
   d_dumka: string;
