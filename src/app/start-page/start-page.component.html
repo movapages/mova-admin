@@ -3,7 +3,7 @@
 
 @if(dumkyList | async; as list) {
   @for( item of list; track item.id) {
-    <div>{{item.id}}.
+    <div class="p m"><button [ngClass]="item.d_status ? 'text-green-500 border-green-600' : 'text-gray-300 border-gray-400' " class="border rounded min-h-6 min-w-7">&checkmark;</button>&emsp;{{item.id}}.
       <a class="cursor-pointer" (click)="showDumka($event, item)">{{item.d_title}}</a>
       <small class="text-xs text-gray-400">
         / {{item.d_ts | date}} /

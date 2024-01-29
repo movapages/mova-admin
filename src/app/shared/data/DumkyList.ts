@@ -1,6 +1,7 @@
 // initial mockup data
 export interface dumkaListInterface {
   id: number;
+  d_status: boolean;
   d_ts: string;
   d_title: string;
   d_short: string;
@@ -9,6 +10,7 @@ export interface dumkaListInterface {
 export const dumkyList: dumkaListInterface[] = [
   {
     id: 1,
+    d_status: true,
     d_ts: '2024-01-25 15:01:17',
     d_title: 'Title 1',
     d_short: 'Title One Short Desc',
@@ -16,6 +18,7 @@ export const dumkyList: dumkaListInterface[] = [
   },
   {
     id: 2,
+    d_status: true,
     d_ts: '2024-01-25 15:01:18',
     d_title: 'Title 2',
     d_short: 'Title Two Short Desc',
@@ -23,6 +26,7 @@ export const dumkyList: dumkaListInterface[] = [
   },
   {
     id: 3,
+    d_status: true,
     d_ts: '2024-01-25 15:01:20',
     d_title: 'Title 3',
     d_short: 'Title Three Short Desc',

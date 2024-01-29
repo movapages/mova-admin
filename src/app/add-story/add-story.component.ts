@@ -50,6 +50,7 @@ export class AddStoryComponent implements OnInit, AfterViewInit {
   public formSave(): void {
     this.dumkyService.dumkyBS.next([...this.dumkyService.dumkyBS.getValue(), {
       id: this.dumkyService?.dumkyBS.getValue().length + 1,
+      d_status: false,
       d_ts:(new Date()).toISOString(),
       d_title: this.addDumkaForm.value.d_title!,
       d_short: this.addDumkaForm.value.d_short!,
