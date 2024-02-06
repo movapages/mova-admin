@@ -8,5 +8,5 @@ import {dumkyList, dumkaListInterface} from "../shared/data/DumkyList";
 export class DumkyService {
   public dumkyBS = new BehaviorSubject<dumkaListInterface[]>(dumkyList);
   public oneDumkaBS = new BehaviorSubject<dumkaListInterface | null>(null);
-  constructor() { }
+  public controlDumkaBS = new BehaviorSubject<dumkaListInterface | null>(null);
 }

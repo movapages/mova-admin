@@ -1,6 +1,10 @@
-# MovaAdmin
+## MovaAdmin: Simple CMS
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.1.0.
+
+### Demo
+
+![Demo SPA](angular17-simple-cms-demo.gif)
 
 ## Development server
 

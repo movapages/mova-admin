@@ -1,0 +1,25 @@
+<div
+  class="backdrop-blur z-[1010] border rounded shadow-xl bg-slate-50 p-4
+  flex flex-col justify-evenly
+  fixed inset-0 left-[200px] top-10 min-w-[220px] max-w-fit max-h-[160px]"
+  tabindex="-1" role="alertdialog">
+  @if(controlDumky | async; as cDumka) {
+    <h3 class="text-2xl">{{cDumka.d_title}}</h3>
+    <hr />
+    <small>{{cDumka.d_short}}</small>
+    <hr />
+    <div class="flex flex-row justify-center gap-4">
+      <button
+        class="border bg-red-50 min-w-[48px] rounded text-2xl text-amber-600"
+        (click)="closeThisModal()" type="button">
+        &cross;</button>
+      <button (click)="publishDumku(cDumka)"
+        class="border min-w-[48px] rounded text-2xl"
+        [ngClass]="cDumka.d_status ? 'bg-gray-50 text-gray-500 disabled' : 'bg-green-50 text-green-500'"
+         type="button">
+        &checkmark;</button>
+    </div>
+  } @else {
+    <small>Нема обраної думки.</small>
+  }
+</div>

@@ -3,11 +3,16 @@
 
 @if(dumkyList | async; as list) {
   @for( item of list; track item.id) {
-    <div class="p m"><button [ngClass]="item.d_status ? 'text-green-500 border-green-600' : 'text-gray-300 border-gray-400' " class="border rounded min-h-6 min-w-7">&checkmark;</button>&emsp;{{item.id}}.
+    <div class="m-2">
+      <button (click)="changeCurrentModal(item)"
+        [ngClass]="item.d_status ? 'text-green-500 border-green-600' : 'text-gray-300 border-gray-400' "
+              class="border rounded min-h-6 min-w-7">&checkmark;</button>
+      @if(currentModal === item.id) {
+          <app-modal (closeModal)="closeModal()"></app-modal>
+      }
+      &emsp;{{item.id}}.
       <a class="cursor-pointer" (click)="showDumka($event, item)">{{item.d_title}}</a>
-      <small class="text-xs text-gray-400">
-        / {{item.d_ts | date}} /
-      </small>
+      <small class="text-xs text-gray-400">/ {{item.d_ts | date}} /</small>
     </div>
   } @empty {
     <small>Думок нема.</small>
@@ -21,12 +26,8 @@
       <p class="m p-3">{{one.d_short}}</p>
       <article class="border rounded-xl border-gray-200 min-h-80 p-3" [innerHTML]="one.d_dumka"></article>
     } @else {
-     <small class="text-gray-400">Думка ще не обрана.</small>
+     <small class="text-gray-400 animate-pulse">Думка ще не обрана.</small>
     }
   </section>
 
 </div>
-
-
-
-
